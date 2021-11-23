@@ -11,7 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import cundi.edu.co.demo.entity.Autor;
+import cundi.edu.co.demo.entity.Estudiante;
 import cundi.edu.co.demo.repository.IAutorRepo;
+import cundi.edu.co.demo.repository.IEstudianteRepo;
 import cundi.edu.co.demo.service.IUsuarioService;
 
 @SpringBootTest
@@ -22,6 +24,9 @@ class LineaIiiApplicationTests {
 	
 	@Autowired
 	private IAutorRepo autorRepo;
+	
+	@Autowired
+	private IEstudianteRepo estudianteRepo;
 	
 	@Autowired
 	private IUsuarioService usuarioService;
@@ -48,6 +53,12 @@ class LineaIiiApplicationTests {
 		int autorId = 1;
 		Autor autor = autorRepo.findById(autorId).orElse(null);
 		assertNotNull(autor);
+	}
+	
+	@Test
+	void validarExistenciaEstudiante() {
+		Estudiante estudiante = estudianteRepo.findByApellido("Cruz");
+		assertNotNull(estudiante);
 	}
 
 }

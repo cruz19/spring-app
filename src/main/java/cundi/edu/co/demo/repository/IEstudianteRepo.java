@@ -13,6 +13,8 @@ public interface IEstudianteRepo extends JpaRepository<Estudiante, Integer> {
 	
 	public Estudiante findByCorreo(String correo);
 	
+	public Estudiante findByApellido(String apellido);
+	
 	public Boolean existsByCedula(String cedula);
 	
 	public Boolean existsByCorreo(String correo);
