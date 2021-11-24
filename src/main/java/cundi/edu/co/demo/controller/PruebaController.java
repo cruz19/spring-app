@@ -12,7 +12,7 @@ public class PruebaController {
 
 	@GetMapping(value = "/saludo", produces = "application/json")
 	public ResponseEntity<String> saludar() {
-		return new ResponseEntity<String>("HOLA MUNDO 09:50 a.m", HttpStatus.OK);
+		return new ResponseEntity<String>("HOLA MUNDO 09:55 a.m", HttpStatus.OK);
 	}
 
 }
