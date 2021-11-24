@@ -25,7 +25,7 @@ import cundi.edu.co.demo.exception.ModelNotFoundException;
 import cundi.edu.co.demo.service.IAutorEditorialService;
 import cundi.edu.co.demo.service.IAutorService;
 
-// @PreAuthorize("hasAuthority('Administrador')")
+@PreAuthorize("hasAuthority('Administrador')")
 @RestController
 @RequestMapping("/autores")
 // @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
@@ -37,7 +37,7 @@ public class AutorController {
 	@Autowired
 	private IAutorEditorialService serviceAE;
 	
-	// @PreAuthorize("hasAuthority('Administrador')  OR hasAuthority('Vendedor') ")
+	@PreAuthorize("hasAuthority('Administrador')  OR hasAuthority('Vendedor') ")
 	@GetMapping(value = "/obtenerPaginado", produces = "application/json")
 	public ResponseEntity<?> retonarPaginado(Pageable page) {
 		Page<AutorDto> results  = autorService.retornarPaginado(page);
