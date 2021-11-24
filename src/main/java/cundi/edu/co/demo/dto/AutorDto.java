@@ -29,7 +29,6 @@ public class AutorDto {
 	@Email(message = "Email incorrecto")
 	private String correo;
 
-	@Valid
 	@JsonIgnoreProperties(value = { "autor" })
 	private List<LibroDto> libros;
 	
