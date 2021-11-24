@@ -48,17 +48,6 @@ class LineaIiiApplicationTests {
 		assertEquals(resultado, 13);
 	}
 	
-	@Test
-	void validarExistenciaAutor() {
-		int autorId = 1;
-		Autor autor = autorRepo.findById(autorId).orElse(null);
-		assertNotNull(autor);
-	}
-	
-	@Test
-	void validarExistenciaEstudiante() {
-		Estudiante estudiante = estudianteRepo.findByApellido("Cruz");
-		assertNotNull(estudiante);
-	}
+
 
 }
